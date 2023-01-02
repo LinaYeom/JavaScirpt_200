@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cart = [
+            {name: '옷', price: 2000},
+            {name: '가방', price: 1000}
+        ];
+        const numOfItems = `카드에 ${cart.length}개의 아이템이 있습니다`
+        const cartTable =
+        `<ul>
+            <li>품목: ${cart[0].name}, 가격: ${cart[0].price}원</li>
+            <li>품목: ${cart[1].name}, 가격: ${cart[1].price}원</li>
+        </ul>`
+        document.write(numOfItems); // 카드에 두개의 아이템~~! 
+        document.write(cartTable); // 테이블이 출력 
+        
+        let personName = 'harin'; 
+        let helloString = 'hello' + personName;
+        let helloString1 = 'hello ' + personName;
+        let helloTemplateString = `hello ${personName}`; // 여기 띄어쓰기 까지 같아야 frue , false 가 나온다
+        console.log(helloString === helloTemplateString);
+        console.log(helloString1 === helloTemplateString); // 같은곳을 참조하고 있다.
+        console.log(typeof helloTemplateString);
+
+    </script>
+</body>
+</html>

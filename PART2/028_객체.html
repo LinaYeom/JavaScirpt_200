@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var family = {
+            'address': 'Seoul',
+            members: [],
+            addFamily: function(member) {
+                this.members.push(member);
+                console.log(family.members[1]) // 한번씩 값이 들어간다. 
+            },
+            getHeadcount: function() {
+                return Object.keys(this.members).length;
+            }
+        };
+        const chloe = {
+            age: 30,
+            name: 'chloe',
+            type: 'aunt'
+        }
+        console.log(1)
+        const lyn = {
+            age: 3,
+            name: 'lyn',
+            type: 'niece'
+        }
+        console.log(2)
+        family.addFamily(chloe);
+        console.log(3)
+        family.addFamily(lyn);
+        
+        //family.addFamily(10, 'dangdangi', 'dog');
+
+        // 배열의 길이를 말하는것이다. 
+        console.log(family.getHeadcount());
+    </script>
+</body>
+</html>
