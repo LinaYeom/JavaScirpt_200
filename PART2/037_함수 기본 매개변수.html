@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function drawChart(width = 200, height = 400) {
+            console.log(`${width} X ${height} 차트를 그립니다.`);
+        }
+        drawChart("첫번째 출력: " + 100); // 뒤에는 선언안하면 디폴트 값이다. 
+        drawChart("두번째 출력: " + 200);
+        drawChart("세번째 출력: " + this.width, 200)
+        drawChart("네번째 출력: " + 300, 500)
+        drawChart();
+
+        console.log("------------")
+        
+        function drawChart2(width = 200, height = width / 2) {
+            console.log(`${width} X ${height} 차트를 그립니다.`);
+        }
+        drawChart2(300);
+        drawChart2(this.width);
+        drawChart2(this.default, 200) // 뒷 값을 고정 시킬 수도 있다. 고정시키면 200/2 가 안먹힌다. 
+        drawChart2(300, 500)
+        drawChart2();
+    </script>
+</body>
+</html>
