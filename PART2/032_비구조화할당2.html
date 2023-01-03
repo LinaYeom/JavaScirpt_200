@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [ 1, 2, 30, 44, 5 ];
+        
+        var [b, c, ...rest] = arr;
+        console.log(Object.keys(arr)) // 배열선언한것을 가져오기때문에 Object.keys(배열명)으로 가져와야한다.
+        // b:1  , c:2 ... 30 , 44, 5 를 말한다. 
+        // 할당이 된것은 b와 c뿐이고 나머지는 배열이다. 
+        // b:1 , c:2 , [30, 44, 5] 이다. 
+
+        console.log(`0) b >>> ${b}`);  // 1
+        console.log(`0) c >>> ${c}`); // 2 
+        console.log(`0) rest >>> ${rest}`); // -> 30, 44, 5
+        console.log('-------------');
+
+        var [a=10, f=9] = [3]; 
+        console.log(`1) a >>> ${a}`); // a는 10으로 할당되었으나 3으로 넣어줬기에 3이된다. 만약 [3,5]를 넣으면 a=3 이되고 f=5 가된다.
+        console.log(`1) f >>> ${f}`); //f 는 없기 때문에 할당된 9를 가져온다. 
+        console.log('-------------');
+
+        [a, f] = [f, a]; // 할당된 9,와 1을 a, f 에 순차적으로 넣었다. 
+        console.log(`2) a >>> ${a}`); //a는 9로 바뀌고 
+        console.log(`2) f >>> ${f}`); // f는 1로 바뀐다. 
+        console.log('-------------');
+
+        function getArr() {
+            return [1, 2, 3, 4, 5, 6];
+            }
+        [a, , , , , f] = getArr();
+        console.log(getArr()) 
+        // getArr 는 콜솔로 찍어도 나오는 이유가 function 이기 때문이다.
+        // getArr =  a:1 , [2,3,4,5] , f:6 이다.
+        
+        console.log(`3) a >>> ${a}`); // a 는 1 이 나온다
+        console.log(`3) f >>> ${f}`); // f 는 6이 나온다.
+    </script>
+</body>
+</html>

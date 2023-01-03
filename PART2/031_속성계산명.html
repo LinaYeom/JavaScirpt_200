@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {};
+        for (var i = 0; i < 4; i++) {
+            obj['key' + i] = i;
+            }
+        console.log(obj);
+
+        var profile = 'chloe:30';
+        var profile2 = 'chloe:30';
+        var person = {
+            [profile] : true,
+            [profile2] : true,
+            [profile.split(':')[0]]: profile.split(':')[1], // : 이 기준으로 왼쪽과 오른쪽이 나뉨 
+            // 기존에 있는 : 은 사라짐 : < 나오는 이유는 키와 값으로 변경되었기 때문.
+            [profile2.split('e')[0]]: profile2.split('e')[1]
+            // e를 기준으로 하면 e가 사라지로 키와 값으로 변경되었기 때문에 : 이 생김 
+            };
+        console.log(person); 
+    </script>
+</body>
+</html>

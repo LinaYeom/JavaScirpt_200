@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum() { // 1,2,3 이 들어옴 
+            console.log(arguments[0]) // 바깥에서 arguments 는 불러오는것이 어렵다
+            console.log(arguments[1])
+            console.log(arguments[2])
+            
+        var total = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                    total += arguments[i];
+                    console.log(i+"번째: "+total)
+            }
+        console.log(arguments instanceof Array); // 배열이 아니기 때문에 false 뜬다. 
+            return total;
+        }
+        console.log(this.s)
+        var sumOf1to3 = sum(1, 2, 3); 
+        console.log("------------")
+        console.log("sum: " + sumOf1to3); // sum 에서 return 된 값이 6 이기 때문에 sum은 결국 6이된다. 
+
+        function testArg() { // a와 b를 넣었다. 
+            var newArr = Array.prototype.slice.call(arguments);
+            // 어떤 배열의 첫번째 부터 끝까지 복사본을 새로운 배열 객체로 반환한다. 원본의 arguments는 바뀌지않는다. 
+            // 즉 복사본으로 실행 중인 함수를 가져온것이다. 
+
+            console.log(newArr instanceof Array) // 배열이 맞기 때문에 true 가 뜬다 
+            console.log("newArr의 배열들: "+(newArr)); // 배열이 담긴 값이 출력된다. 
+            console.log("a의 자리: "+(newArr.indexOf('a'))); // 0번째 자리의 a가 들어간것
+            console.log("b의 자리: "+(newArr.indexOf('b'))); // 1번째 자리의 b가 들어간것 
+            // console.log(arguments.indexOf('b')); // arguments 객체는 배열이 아니기 때문에 타입에러가 뜬다. 
+            return newArr;
+        }
+        // testArg('a', 'b');
+        // t바인딩 콜이ㅇ this를 지ㅓㅇ해주는거 
+        console.log(testArg('a', 'b'))
+        // console.log(testArg.arguments[0])
+    </script>
+</body>
+</html>
