@@ -14,7 +14,7 @@
             console.log(arguments[2]) // 즉, 지역 스코프이기 때문에 벗어나면 불러올 수 없다. 
             console.log(typeof arguments) // object 이다. 
             console.log(sum.indexOf) // sum 은 function 이기 때문에 index 가 없다. (1)을 넣으면 타입에러
-            console.log(arguments.indexOf(1)) // 타입 에러 
+            // console.log(arguments.indexOf(1)) // 타입 에러가 뜬다.
             // arguments 객체는 Array 가 아니다. 
             // Array 와 비슷하지만 Array 속성이 없다. 
             // 그렇지만 Array로 변환할 수 있다. 
@@ -45,8 +45,8 @@
             // console.log(arguments.indexOf('b')); // arguments 객체는 배열이 아니기 때문에 타입에러가 뜬다. 
             return newArr;
         }
+        
         // testArg('a', 'b');
-        // t바인딩 콜이ㅇ this를 지ㅓㅇ해주는거 
         console.log(testArg('a', 'b'))
         // console.log(testArg.arguments[0])
     </script>
