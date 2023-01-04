@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = 'jungah'; // 1. 전역 코드 실행 컨텍스트 생성 
+
+        function print(){ // 2-1. print 실행 컨텍스트 실행 중
+        var person2 = 'hyunah'; 
+
+        function innerPrint(){  // 3-2. innerPrint 실행 컨텍스트 실행 중 
+            console.log(person) 
+            console.log(person2) // 3-3. innerPrint 종료 
+        }
+        innerPrint(); // 3-1. innerPrint 실행 컨텍스트 생성 
+        console.log('print finished'); // 4. pirnt 실행 컨텍스트 종료 
+        }
+        print(); // 2. print 실행 컨텍스트 생성 
+        console.log('finished'); // 5. 전역실행 컨텍스트 실행문 종료
+    </script>
+</body>
+</html>
